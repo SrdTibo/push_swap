@@ -6,7 +6,7 @@
 /*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 10:07:11 by tserdet           #+#    #+#             */
-/*   Updated: 2023/02/22 12:56:23 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/02/22 17:15:52 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 int	main(int argc, char **argv)
 {
-	check_argv(argc, argv);
-	check_double(argc, argv);
-	return(0);
+	if (check_argv(argc, argv) == 0)
+		return (0);
+	if (check_double(argc, argv) == 0)
+		return (0);
+	return (1);
 }
