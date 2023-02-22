@@ -6,7 +6,7 @@
 /*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 14:35:50 by tserdet           #+#    #+#             */
-/*   Updated: 2023/02/22 11:32:05 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/02/22 13:56:20 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,32 @@ int	check_argv(int argc, char **argv)
 		}
 		i = 0;
 		p++;
+	}
+	return (1);
+}
+
+int check_double(int argc, char **argv)
+{
+	int	i;
+	int	p;
+	int temp;
+
+	i = 1;
+	p = 1;
+	while (i < argc)
+	{
+		temp = atoi(argv[i]);
+		while (p < argc)
+		{
+			if (atoi(argv[p]) == temp)
+			{
+				ft_printf("There should be no duplicates");
+				return (0);
+			}
+			p++;
+		}
+		p = i + 1;
+		i++;
 	}
 	return (1);
 }

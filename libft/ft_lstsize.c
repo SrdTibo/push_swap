@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 10:07:11 by tserdet           #+#    #+#             */
-/*   Updated: 2023/02/22 12:56:23 by tserdet          ###   ########.fr       */
+/*   Created: 2022/10/31 16:16:12 by tserdet           #+#    #+#             */
+/*   Updated: 2022/11/02 09:23:31 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#include "push_swap.h"
-
-int	main(int argc, char **argv)
+int	ft_lstsize(t_list *lst)
 {
-	check_argv(argc, argv);
-	check_double(argc, argv);
-	return(0);
+	int	i;
+
+	i = 0;
+	if (lst == NULL)
+		return (0);
+	while (lst)
+	{
+		i++;
+		lst = lst->next;
+	}
+	return (i);
 }

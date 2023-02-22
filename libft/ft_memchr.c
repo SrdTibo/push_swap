@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 10:07:11 by tserdet           #+#    #+#             */
-/*   Updated: 2023/02/22 12:56:23 by tserdet          ###   ########.fr       */
+/*   Created: 2022/10/31 16:10:27 by tserdet           #+#    #+#             */
+/*   Updated: 2022/11/02 17:11:40 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#include "push_swap.h"
-
-int	main(int argc, char **argv)
+void	*ft_memchr(const void *memoryBlock, int searchedChar, size_t size)
 {
-	check_argv(argc, argv);
-	check_double(argc, argv);
-	return(0);
+	const unsigned char	*string;
+	size_t				i;
+
+	string = (const unsigned char *) memoryBlock;
+	i = 0;
+	while (i < size)
+	{
+		if (string[i] == (const unsigned char) searchedChar)
+			return ((void *)&string[i]);
+		i++;
+	}
+	return (0);
 }

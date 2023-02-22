@@ -1,20 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   libftprintf.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 10:07:11 by tserdet           #+#    #+#             */
-/*   Updated: 2023/02/22 12:56:23 by tserdet          ###   ########.fr       */
+/*   Created: 2022/10/31 15:45:57 by tserdet           #+#    #+#             */
+/*   Updated: 2022/10/31 16:21:07 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-int	main(int argc, char **argv)
+int	ft_print_s(char *c, int *verification)
 {
-	check_argv(argc, argv);
-	check_double(argc, argv);
-	return(0);
+	int	i;
+
+	i = 0;
+	if (c == NULL)
+	{
+		ft_print_s("(null)", verification);
+		return (6);
+	}
+	while (c[i])
+	{
+		ft_print_c(c[i], verification);
+		i++;
+	}
+	return (i);
 }

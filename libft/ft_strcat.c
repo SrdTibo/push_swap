@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tserdet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 10:07:11 by tserdet           #+#    #+#             */
-/*   Updated: 2023/02/22 12:56:23 by tserdet          ###   ########.fr       */
+/*   Created: 2022/07/23 10:59:42 by tserdet           #+#    #+#             */
+/*   Updated: 2022/07/23 12:04:14 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-int	main(int argc, char **argv)
+char	*ft_strcat(char *dest, char *src)
 {
-	check_argv(argc, argv);
-	check_double(argc, argv);
-	return(0);
+	int		lenght;
+	int		i;
+
+	i = 0;
+	lenght = 0;
+	while (dest[lenght] != '\0')
+	{
+		lenght++;
+	}
+	while (src[i])
+	{
+		dest[lenght] = src[i];
+		i++;
+		lenght++;
+	}
+	dest[lenght] = '\0';
+	return (dest);
 }

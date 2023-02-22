@@ -1,20 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 10:07:11 by tserdet           #+#    #+#             */
-/*   Updated: 2023/02/22 12:56:23 by tserdet          ###   ########.fr       */
+/*   Created: 2022/11/02 10:11:40 by tserdet           #+#    #+#             */
+/*   Updated: 2022/11/02 10:11:43 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#include "push_swap.h"
-
-int	main(int argc, char **argv)
+void	*ft_memcpy(void *d, const void *s, size_t size)
 {
-	check_argv(argc, argv);
-	check_double(argc, argv);
-	return(0);
+	unsigned int	i;
+	const char		*chaine_source;
+	char			*chaine_dest;
+
+	chaine_dest = d;
+	chaine_source = s;
+	i = 0;
+	if (chaine_dest == 0 && chaine_source == 0)
+		return (chaine_dest);
+	while (i < size)
+	{
+		chaine_dest[i] = chaine_source[i];
+		i++;
+	}
+	return (chaine_dest);
 }
