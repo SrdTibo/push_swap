@@ -6,7 +6,7 @@
 /*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 10:07:11 by tserdet           #+#    #+#             */
-/*   Updated: 2023/02/22 17:15:52 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/02/26 17:33:44 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,10 @@ int	main(int argc, char **argv)
 		return (0);
 	if (check_double(argc, argv) == 0)
 		return (0);
+	if (put_list(argc, argv) == 0)
+	{
+		printf("Problem converting to linked list");
+		return (0);
+	}
 	return (1);
 }
