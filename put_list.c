@@ -6,7 +6,7 @@
 /*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 14:30:59 by tserdet           #+#    #+#             */
-/*   Updated: 2023/02/26 17:45:13 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/03/01 13:00:04 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,21 +40,21 @@ int insertion(t_control *list, int nvNombre)
 	return (1);
 }
 
-int afficherListe(t_control *list)
-{
-    t_pile *actuel;
+// int afficherListe(t_control *list)
+// {
+//     t_pile *actuel;
 
-	actuel = list->first;
-	if (list == NULL)
-        return (0);
-    while (actuel != NULL)
-    {
-        ft_printf("%d -> ", actuel->content);
-        actuel = actuel->next;
-    }
-    ft_printf("NULL\n");
-	return (1);
-}
+// 	actuel = list->first;
+// 	if (list == NULL)
+//         return (0);
+//     while (actuel != NULL)
+//     {
+//         ft_printf("%d -> ", actuel->content);
+//         actuel = actuel->next;
+//     }
+//     ft_printf("NULL\n");
+// 	return (1);
+// }
 
 t_control	*put_list(int argc, char **argv)
 {
@@ -71,7 +71,7 @@ t_control	*put_list(int argc, char **argv)
 			return (0);
 		i++;
 	}
-	if (afficherListe(list) == 0)
-		return (0);
+	// if (afficherListe(list) == 0)
+	// 	return (0);
 	return (list);
 }

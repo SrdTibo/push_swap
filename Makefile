@@ -1,6 +1,6 @@
 NAME = push_swap.out
 CFLAGS = -Wall -Wextra -Werror
-SRC	= 	main.c put_list.c check_argv.c\
+SRC	= 	main.c put_list.c check_argv.c put_tab.c\
 libft/ft_calloc.c libft/ft_isdigit.c libft/ft_memcpy.c libft/ft_strtrim.c libft/ft_strdup.c libft/ft_strlen.c\
 libft/ft_isalnum.c libft/ft_isprint.c \
 libft/ft_memmove.c libft/ft_strjoin.c libft/ft_strncmp.c libft/ft_substr.c libft/ft_atoi.c libft/ft_isalpha.c\

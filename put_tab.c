@@ -1,29 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   put_tab.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 10:07:11 by tserdet           #+#    #+#             */
-/*   Updated: 2023/03/01 12:42:27 by tserdet          ###   ########.fr       */
+/*   Created: 2023/03/01 12:10:29 by tserdet           #+#    #+#             */
+/*   Updated: 2023/03/01 12:59:35 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+t_tab *put_tab(int argc, char **argv)
 {
-	if (check_argv(argc, argv) == 0)
-		return (0);
-	if (check_double(argc, argv) == 0)
-		return (0);
-	if (put_list(argc, argv) == 0)
+	t_tab	*stack;
+	int		i;
+	int		j;
+
+	i = 0;
+	j = 1;
+	stack = malloc(sizeof(t_tab));
+	stack->a = malloc(sizeof(int) * argc - 1);
+	stack->b = malloc(sizeof(int) * argc - 1);
+	if (stack == NULL || stack->a == NULL || stack->b == NULL)
 	{
-		printf("Problem converting to linked list");
+		free(stack);
 		return (0);
 	}
-	if (put_tab(argc, argv) == 0)
-		return (0);
-	return (1);
+	while (j < argc)
+	{
+		stack->a[i] = atoi(argv[j]);
+		i++;
+		j++;
+	}
+	return (stack);
 }
