@@ -6,7 +6,7 @@
 /*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 10:07:27 by tserdet           #+#    #+#             */
-/*   Updated: 2023/03/03 14:26:54 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/03/07 16:09:39 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,15 @@ typedef struct s_tab{
 	int	*temp;
 }					t_tab;
 int	free_end(t_tab *stack);
-t_control	*put_list(int argc, char **argv);
 t_control	*initialisation();
-t_tab *put_tab(int argc, char **argv);
+t_tab *put_tab_big(int argc, char **argv);
+t_tab *put_tab_little(int argc, char **argv);
 int	check_argv(int argc, char **argv);
-int	check_double(int argc, char **argv);
-// int afficherListe(t_control *list);
 int insertion(t_control *list, int nvNombre);
 t_tab *sort_tab(t_tab *stack, int n);
 t_tab *algo(int argc, char **argv);
 int	free_end(t_tab *stack);
+int	argv_big_check(int argc, char **argv);
+int	argv_little_check(char **argv);
+int	nmbr_arg_tab(char **argv);
 #endif

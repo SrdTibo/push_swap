@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_argv.c                                       :+:      :+:    :+:   */
+/*   argv_big_check.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 14:35:50 by tserdet           #+#    #+#             */
-/*   Updated: 2023/02/22 17:20:19 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/03/07 16:30:46 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ int	check_argv(int argc, char **argv)
 
 	p = 1;
 	i = 0;
-	if (argc <= 1)
-		return (0);
 	while (p < argc)
 	{
 		while (argv[p][i] != '\0')
@@ -45,8 +43,6 @@ int check_double(int argc, char **argv)
 
 	i = 1;
 	p = 2;
-	if (argc > 2)
-	{
 		while (i < argc)
 		{
 			while (p < argc)
@@ -61,6 +57,16 @@ int check_double(int argc, char **argv)
 			i++;
 			p = i + 1;
 		}
-	}
+	return (1);
+}
+
+int	argv_big_check(int argc, char **argv)
+{
+	if (check_argv(argc, argv) == 0)
+		return (0);
+	if (check_double(argc, argv) == 0)
+		return (0);
+	if (put_tab_big(argc, argv) == 0)
+		return (0);
 	return (1);
 }

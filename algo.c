@@ -6,7 +6,7 @@
 /*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 09:21:08 by tserdet           #+#    #+#             */
-/*   Updated: 2023/03/03 15:10:44 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/03/07 17:03:01 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void swap(int *a, int *b)
     *a = *b;
     *b = temp;
 }
-0
+
 t_tab *sort_tab(t_tab *stack, int n)
 {
     int i;
@@ -43,21 +43,21 @@ t_tab *sort_tab(t_tab *stack, int n)
 	return (stack);
 }
 
-t_tab *algo(int argc, char **argv)
-{
-	t_tab 	*stack;
-	int		i;
+// t_tab *algo(int argc, char **argv)
+// {
+// 	t_tab 	*stack;
+// 	int		i;
 
-	i = 0;
-	stack = put_tab(argc, argv);
-	if (stack == NULL)
-	{
-		free_end(stack);
-		return (0);
-	}
-	sort_tab(stack, argc - 2);
-	return (stack);
-}
+// 	i = 0;
+// 	stack = put_tab(argc, argv);
+// 	if (stack == NULL)
+// 	{
+// 		free_end(stack);
+// 		return (0);
+// 	}
+// 	sort_tab(stack, argc - 2);
+// 	return (stack);
+// }
 
 /*	
 	- Trier tous les nombres;
