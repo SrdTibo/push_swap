@@ -19,6 +19,7 @@ t_tab *put_tab_big(int argc, char **argv, t_tab *stack)
 
 	i = 0;
 	j = 1;
+
 	stack->a = malloc(sizeof(int) * argc - 1);
 	stack->b = malloc(sizeof(int) * argc - 1);
 	stack->temp = malloc(sizeof(int) * argc - 1);
@@ -28,18 +29,13 @@ t_tab *put_tab_big(int argc, char **argv, t_tab *stack)
 		return (0);
 	}
 	while (j < argc)
-		stack->temp[i++] = ft_atoi(argv[j++]);
+	{
+		stack->temp[i] = ft_atoi(argv[j]);
+		i++;
+		j++;
+	}
 	stack->argm = i;
 	stack->s_a = i;
-
-
-
-	i = 0;
-	while (i < stack->s_a)
-	{
-		ft_printf("%d\n", stack->a[i]);
-		i++;
-	}
 	return (stack);
 }
 
@@ -59,15 +55,12 @@ t_tab *put_tab_little(int argc, char **argv, t_tab *stack)
 		return (0);
 	}
 	while (j < argc)
-		stack->temp[i++] = ft_atoi(argv[j++]);
+	{
+		stack->temp[i] = ft_atoi(argv[j]);
+		i++;
+		j++;
+	}
 	stack->argm = i;
 	stack->s_a = i;
-
-	i = 0;
-	while (i < stack->s_a)
-	{
-		ft_printf("%d\n", stack->a[i]);
-		i++;
-	}
 	return (stack);
 }

@@ -51,6 +51,7 @@ t_tab *algo(char **argv, t_tab *stack)
         return (0);
     }
     sort_tab(stack, stack->argm - 2);
+    printf("%d", stack->argm);
     return (stack);
 }
 
