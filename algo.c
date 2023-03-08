@@ -39,13 +39,7 @@ t_tab *sort_tab(t_tab *stack, int n)
         }
         i++;
     }
-	i = 0;
-	while (i < stack->s_a)
-	{
-		ft_printf("%d\n", stack->a[i]);
-		i++;
-	}
-	return (stack);
+    return (stack);
 }
 
 t_tab *algo(char **argv, t_tab *stack)

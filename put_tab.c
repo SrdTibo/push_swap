@@ -31,6 +31,15 @@ t_tab *put_tab_big(int argc, char **argv, t_tab *stack)
 		stack->temp[i++] = ft_atoi(argv[j++]);
 	stack->argm = i;
 	stack->s_a = i;
+
+
+
+	i = 0;
+	while (i < stack->s_a)
+	{
+		ft_printf("%d\n", stack->a[i]);
+		i++;
+	}
 	return (stack);
 }
 
@@ -53,5 +62,12 @@ t_tab *put_tab_little(int argc, char **argv, t_tab *stack)
 		stack->temp[i++] = ft_atoi(argv[j++]);
 	stack->argm = i;
 	stack->s_a = i;
+
+	i = 0;
+	while (i < stack->s_a)
+	{
+		ft_printf("%d\n", stack->a[i]);
+		i++;
+	}
 	return (stack);
 }
