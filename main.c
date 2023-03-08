@@ -37,7 +37,7 @@ int	main(int argc, char **argv)
 	return (1);
 }
 
-/*	
+/*
 	- Trier tous les nombres;
 	- Ajouter la position des nombres trier a la stack A;
 	- Parcourir stack A:
