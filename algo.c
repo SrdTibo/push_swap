@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 09:21:08 by tserdet           #+#    #+#             */
-/*   Updated: 2023/03/08 10:52:02 by thib             ###   ########.fr       */
+/*   Updated: 2023/03/08 11:12:30 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,15 +39,18 @@ t_tab *sort_tab(t_tab *stack, int n)
         }
         i++;
     }
-
+	i = 0;
+	while (i < stack->s_a)
+	{
+		ft_printf("%d\n", stack->a[i]);
+		i++;
+	}
 	return (stack);
 }
 
 t_tab *algo(char **argv, t_tab *stack)
 {
-    int		i;
-
-    i = 0;
+	(void)argv;
     if (stack == NULL)
     {
         free_end(stack);

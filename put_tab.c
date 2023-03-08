@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 12:10:29 by tserdet           #+#    #+#             */
-/*   Updated: 2023/03/08 10:45:45 by thib             ###   ########.fr       */
+/*   Updated: 2023/03/08 11:10:41 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ t_tab *put_tab_big(int argc, char **argv, t_tab *stack)
 
 	i = 0;
 	j = 1;
-	stack = malloc(sizeof(t_tab));
 	stack->a = malloc(sizeof(int) * argc - 1);
 	stack->b = malloc(sizeof(int) * argc - 1);
 	stack->temp = malloc(sizeof(int) * argc - 1);
@@ -31,6 +30,7 @@ t_tab *put_tab_big(int argc, char **argv, t_tab *stack)
 	while (j < argc)
 		stack->temp[i++] = ft_atoi(argv[j++]);
 	stack->argm = i;
+	stack->s_a = i;
 	return (stack);
 }
 
@@ -41,7 +41,6 @@ t_tab *put_tab_little(int argc, char **argv, t_tab *stack)
 
 	i = 0;
 	j = 0;
-	stack = malloc(sizeof(t_tab));
 	stack->a = malloc(sizeof(int) * argc );
 	stack->b = malloc(sizeof(int) * argc);
 	stack->temp = malloc(sizeof(int) * argc);
@@ -53,5 +52,6 @@ t_tab *put_tab_little(int argc, char **argv, t_tab *stack)
 	while (j < argc)
 		stack->temp[i++] = ft_atoi(argv[j++]);
 	stack->argm = i;
+	stack->s_a = i;
 	return (stack);
 }
