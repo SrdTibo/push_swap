@@ -42,7 +42,7 @@ t_tab *put_tab_little(int argc, char **argv, t_tab *stack);
 int	check_argv(int argc, char **argv);
 int insertion(t_control *list, int nvNombre);
 t_tab *sort_tab(t_tab *stack, int n);
-t_tab *algo(char **argv, t_tab *stack);
+t_tab *first_sort(char **argv, t_tab *stack);
 int	free_end(t_tab *stack);
 t_tab	*argv_big_check(int argc, char **argv, t_tab *stack);
 t_tab	*argv_little_check(char **argv, t_tab *stack);

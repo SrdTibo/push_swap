@@ -39,10 +39,19 @@ t_tab *sort_tab(t_tab *stack, int n)
         }
         i++;
     }
+
+    i = 0;
+
+    while (i < stack->argm)
+    {
+        printf("%d\n", stack->temp[i]);
+        i++;
+    }
+
     return (stack);
 }
 
-t_tab *algo(char **argv, t_tab *stack)
+t_tab *first_sort(char **argv, t_tab *stack)
 {
 	(void)argv;
     if (stack == NULL)
@@ -51,7 +60,6 @@ t_tab *algo(char **argv, t_tab *stack)
         return (0);
     }
     sort_tab(stack, stack->argm - 2);
-    printf("%d", stack->argm);
     return (stack);
 }
 

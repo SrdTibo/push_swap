@@ -29,9 +29,8 @@ int	main(int argc, char **argv)
 		if (argv_big_check(argc, argv, stack) == 0)
 			return (0);
 	}
-	if (algo(argv, stack) == 0)
+	if (first_sort(argv, stack) == 0)
 		return (0);
-
 	free_end(stack);
 	return (1);
 }
