@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   argv_little_check.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 14:46:19 by tserdet           #+#    #+#             */
-/*   Updated: 2023/03/07 16:40:38 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/03/08 10:49:41 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int check_double_little(int argc, char **argv)
 	return (1);
 }
 
-int argv_split(char **argv)
+t_tab *argv_split(char **argv, t_tab *stack)
 {
 	char **tab;
 
@@ -89,14 +89,14 @@ int argv_split(char **argv)
 		return (0);
 	if (check_double_little(nmbr_arg_tab(tab), tab) == 0)
 		return (0);
-	if (put_tab_little(nmbr_arg_tab(tab), tab) == 0)
+	if (put_tab_little(nmbr_arg_tab(tab), tab, stack) == 0)
 		return (0);
-	return (1);
+	return (stack);
 }
 
-int	argv_little_check(char **argv)
+t_tab	*argv_little_check(char **argv, t_tab *stack)
 {
-	if (argv_split(argv) == 0)
+	if (argv_split(argv, stack) == 0)
 		return (0);
-	return (1);
+	return (stack);
 }

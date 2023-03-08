@@ -3,18 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   put_tab.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 12:10:29 by tserdet           #+#    #+#             */
-/*   Updated: 2023/03/07 16:42:36 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/03/08 10:45:45 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_tab *put_tab_big(int argc, char **argv)
+t_tab *put_tab_big(int argc, char **argv, t_tab *stack)
 {
-	t_tab	*stack;
 	int		i;
 	int		j;
 
@@ -31,12 +30,12 @@ t_tab *put_tab_big(int argc, char **argv)
 	}
 	while (j < argc)
 		stack->temp[i++] = ft_atoi(argv[j++]);
+	stack->argm = i;
 	return (stack);
 }
 
-t_tab *put_tab_little(int argc, char **argv)
+t_tab *put_tab_little(int argc, char **argv, t_tab *stack)
 {
-	t_tab	*stack;
 	int		i;
 	int		j;
 
@@ -53,5 +52,6 @@ t_tab *put_tab_little(int argc, char **argv)
 	}
 	while (j < argc)
 		stack->temp[i++] = ft_atoi(argv[j++]);
+	stack->argm = i;
 	return (stack);
 }

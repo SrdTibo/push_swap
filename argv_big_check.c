@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   argv_big_check.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 14:35:50 by tserdet           #+#    #+#             */
-/*   Updated: 2023/03/07 16:30:46 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/03/08 10:46:01 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,13 +60,13 @@ int check_double(int argc, char **argv)
 	return (1);
 }
 
-int	argv_big_check(int argc, char **argv)
+t_tab	*argv_big_check(int argc, char **argv, t_tab *stack)
 {
 	if (check_argv(argc, argv) == 0)
 		return (0);
 	if (check_double(argc, argv) == 0)
 		return (0);
-	if (put_tab_big(argc, argv) == 0)
+	if (put_tab_big(argc, argv, stack) == 0)
 		return (0);
-	return (1);
+	return (stack);
 }

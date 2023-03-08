@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_print_u.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 15:45:57 by tserdet           #+#    #+#             */
-/*   Updated: 2022/10/31 16:21:07 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/03/08 10:21:50 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ unsigned int	ft_print_u(unsigned int nb, int *verification)
 	unsigned int	o;
 	unsigned int	p;
 
-	if ((nb >= 0) && (nb < 10))
+	if ((nb > 0) && (nb < 10))
 		convertion(nb, verification);
 	else
 	{
