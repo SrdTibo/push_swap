@@ -17,6 +17,8 @@ int	main(int argc, char **argv)
 	t_tab *stack;
 
 	stack = malloc(sizeof(t_tab));
+	if (!stack)
+		return (0);
 	if (argc <= 1)
 		return (0);
 	if (argc == 2)
@@ -34,3 +36,12 @@ int	main(int argc, char **argv)
 	free_end(stack);
 	return (1);
 }
+
+/*	
+	- Trier tous les nombres;
+	- Ajouter la position des nombres trier a la stack A;
+	- Parcourir stack A:
+		si decallage de bit = 0 -> push dans stack B
+		sinon continuer de parcourir Stack A;
+	- Push tout B au dessu de A;
+*/

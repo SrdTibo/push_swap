@@ -23,13 +23,14 @@ t_tab *put_tab_big(int argc, char **argv, t_tab *stack)
 	stack->a = malloc(sizeof(int) * argc - 1);
 	stack->b = malloc(sizeof(int) * argc - 1);
 	stack->temp = malloc(sizeof(int) * argc - 1);
-	if (!stack || !stack->a || !stack->b || !stack->temp)
+	if (!stack->a || !stack->b || !stack->temp)
 	{
 		free_end(stack);
 		return (0);
 	}
 	while (j < argc)
 	{
+		stack->a[i] = ft_atoi(argv[j]);
 		stack->temp[i] = ft_atoi(argv[j]);
 		i++;
 		j++;
@@ -49,13 +50,14 @@ t_tab *put_tab_little(int argc, char **argv, t_tab *stack)
 	stack->a = malloc(sizeof(int) * argc );
 	stack->b = malloc(sizeof(int) * argc);
 	stack->temp = malloc(sizeof(int) * argc);
-	if (!stack || !stack->a || !stack->b || !stack->temp)
+	if (!stack->a || !stack->b || !stack->temp)
 	{
 		free_end(stack);
 		return (0);
 	}
 	while (j < argc)
 	{
+		stack->a[i] = ft_atoi(argv[j]);
 		stack->temp[i] = ft_atoi(argv[j]);
 		i++;
 		j++;

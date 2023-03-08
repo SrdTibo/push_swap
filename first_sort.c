@@ -39,35 +39,46 @@ t_tab *sort_tab(t_tab *stack, int n)
         }
         i++;
     }
+    return (stack);
+}
+
+t_tab *to_positive(t_tab *stack)
+{
+    int i;
+    int j;
+
+    j = 0;
+    i = 0;
+    while (i < stack->argm)
+    {
+        while(j < stack->argm)
+        {
+            if (stack->a[i] == stack->temp[j])
+            {
+                stack->s_a++;
+                stack->a[i] = j;
+            }
+            j++;
+        }
+        j = 0;
+        stack->s_a++;
+        i++;
+    }
 
     i = 0;
 
     while (i < stack->argm)
     {
-        printf("%d\n", stack->temp[i]);
+        printf("%d", stack->a[i]);
         i++;
     }
-
     return (stack);
 }
 
 t_tab *first_sort(char **argv, t_tab *stack)
 {
 	(void)argv;
-    if (stack == NULL)
-    {
-        free_end(stack);
-        return (0);
-    }
     sort_tab(stack, stack->argm - 2);
+    to_positive(stack);
     return (stack);
 }
-
-/*	
-	- Trier tous les nombres;
-	- Ajouter la position des nombres trier a la stack A;
-	- Parcourir stack A:
-		si decallage de bit = 0 -> push dans stack B
-		sinon continuer de parcourir Stack A;
-	- Push tout B au dessu de A;
-*/
