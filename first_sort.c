@@ -55,21 +55,11 @@ t_tab *to_positive(t_tab *stack)
         {
             if (stack->a[i] == stack->temp[j])
             {
-                stack->s_a++;
                 stack->a[i] = j;
             }
             j++;
         }
         j = 0;
-        stack->s_a++;
-        i++;
-    }
-
-    i = 0;
-
-    while (i < stack->argm)
-    {
-        printf("%d", stack->a[i]);
         i++;
     }
     return (stack);
