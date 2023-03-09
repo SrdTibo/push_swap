@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 12:10:29 by tserdet           #+#    #+#             */
-/*   Updated: 2023/03/08 11:10:41 by thib             ###   ########.fr       */
+/*   Updated: 2023/03/09 20:19:29 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ t_tab *put_tab_big(int argc, char **argv, t_tab *stack)
 	{
 		stack->a[i] = ft_atoi(argv[j]);
 		stack->temp[i] = ft_atoi(argv[j]);
+		stack->s_temp++;
 		i++;
 		j++;
 	}
@@ -59,6 +60,7 @@ t_tab *put_tab_little(int argc, char **argv, t_tab *stack)
 	{
 		stack->a[i] = ft_atoi(argv[j]);
 		stack->temp[i] = ft_atoi(argv[j]);
+		stack->s_temp++;
 		i++;
 		j++;
 	}

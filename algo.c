@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 14:43:28 by thib              #+#    #+#             */
-/*   Updated: 2023/03/09 18:59:28 by thib             ###   ########.fr       */
+/*   Updated: 2023/03/09 19:47:35 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	algo(t_tab *stack)
     {
         while (j < stack->s_a)
         {
-			if ((stack->num >> i) && 1 == 1)
+			if ((stack->num >> i) & (1 == 1))
 				ra(stack);
 			else
 				pb(stack);
@@ -63,12 +63,4 @@ void	algo(t_tab *stack)
 		i++;
     }
 	empty_b(stack);
-
-	i = 0;
-
-	while (i < stack->s_a)
-	{
-		ft_printf("%d\n", stack->a[i]);
-		i++;
-	}
 }

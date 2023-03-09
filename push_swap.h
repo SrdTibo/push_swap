@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 10:07:27 by tserdet           #+#    #+#             */
-/*   Updated: 2023/03/09 18:47:26 by thib             ###   ########.fr       */
+/*   Updated: 2023/03/09 20:16:13 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_tab{
 	int	argm;
 	int	s_a;
 	int	num;
+	int	s_temp;
 	int	*a;
 	int	*b;
 	int	*temp;

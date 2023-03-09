@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 10:07:11 by tserdet           #+#    #+#             */
-/*   Updated: 2023/03/09 18:54:51 by thib             ###   ########.fr       */
+/*   Updated: 2023/03/09 20:24:20 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void print_stacks(t_tab *stack)
 		ft_printf("%d|", stack->b[i]);
 		i++;
 	}
+	ft_printf("\n");
 }
 
 int	main(int argc, char **argv)
@@ -44,7 +45,11 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	if (argc <= 1)
+	{
+		free_end(stack);
 		return (0);
+	}
+		
 	if (argc == 2)
 	{
 		if (argv_little_check(argv, stack) == 0)
@@ -57,7 +62,9 @@ int	main(int argc, char **argv)
 	}
 	if (first_sort(argv, stack) == 0)
 		return (0);
+	print_stacks(stack);
 	algo(stack);
+	print_stacks(stack);
 	free_end(stack);
 	return (1);
 }
