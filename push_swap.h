@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 10:07:27 by tserdet           #+#    #+#             */
-/*   Updated: 2023/03/08 10:55:02 by thib             ###   ########.fr       */
+/*   Updated: 2023/03/09 18:47:26 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_control
 typedef struct s_tab{
 	int	argm;
 	int	s_a;
-	int	s_b;
+	int	num;
 	int	*a;
 	int	*b;
 	int	*temp;
@@ -47,4 +47,9 @@ int	free_end(t_tab *stack);
 t_tab	*argv_big_check(int argc, char **argv, t_tab *stack);
 t_tab	*argv_little_check(char **argv, t_tab *stack);
 int	nmbr_arg_tab(char **argv);
+void swap(int *a, int *b);
+t_tab *pa(t_tab *stack);
+t_tab *pb(t_tab *stack);
+t_tab *ra(t_tab *stack);
+void algo(t_tab *stack);
 #endif

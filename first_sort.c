@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algo.c                                             :+:      :+:    :+:   */
+/*   first_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 09:21:08 by tserdet           #+#    #+#             */
-/*   Updated: 2023/03/08 11:12:30 by thib             ###   ########.fr       */
+/*   Updated: 2023/03/09 12:13:40 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,22 +23,27 @@ void swap(int *a, int *b)
 
 t_tab *sort_tab(t_tab *stack, int n)
 {
-    int i;
-	int	j;
-	
-	i = 0;
-	j = 0;
-    while (i < n) 
+	int i;
+    int j;
+
+    j = 0;
+    i = 0;
+	while (j < n)
 	{
-        j = 0;
-        while (j < n)
+		while (i < n)
 		{
-            if (stack->temp[j] > stack->temp[j + 1])
-                swap(&stack->temp[j], &stack->temp[j + 1]);
-            j++;
-        }
-        i++;
-    }
+			if (stack->temp[i + 1] < stack->temp[i])
+				swap(&stack->temp[i + 1], &stack->temp[i]);
+			i++;
+		}
+		i = 0;
+		j++;
+	}
+	while (stack->temp[stack->argm - 2] > stack->temp[stack->argm - 1])
+	{
+		swap(&stack->temp[stack->argm - 2], &stack->temp[stack->argm - 1]);
+		stack->argm--;
+	}
     return (stack);
 }
 
@@ -49,25 +54,37 @@ t_tab *to_positive(t_tab *stack)
 
     j = 0;
     i = 0;
-    while (i < stack->argm)
+    while (i < stack->s_a)
     {
-        while(j < stack->argm)
+        while(j < stack->s_a)
         {
             if (stack->a[i] == stack->temp[j])
-            {
                 stack->a[i] = j;
-            }
             j++;
         }
         j = 0;
         i++;
-    }
+	}
     return (stack);
+}
+
+t_tab *init_b(t_tab *stack)
+{
+	int	i;
+
+	i = 0;
+	while (i < stack->argm)
+	{
+		stack->b[i] = -1;
+		i++;
+	}
+	return (stack);
 }
 
 t_tab *first_sort(char **argv, t_tab *stack)
 {
 	(void)argv;
+	init_b(stack);
     sort_tab(stack, stack->argm - 2);
     to_positive(stack);
     return (stack);

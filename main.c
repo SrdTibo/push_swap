@@ -6,11 +6,32 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 10:07:11 by tserdet           #+#    #+#             */
-/*   Updated: 2023/03/08 11:07:35 by thib             ###   ########.fr       */
+/*   Updated: 2023/03/09 18:54:51 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void print_stacks(t_tab *stack)
+{
+	int	i;
+
+	i = 0;
+	ft_printf("|A|");
+	while (i < stack->s_a)
+	{
+		ft_printf("%d|", stack->a[i]);
+		i++;
+	}
+	ft_printf("\n");
+	ft_printf("|B|");
+	i = 0;
+	while (i < stack->s_a)
+	{
+		ft_printf("%d|", stack->b[i]);
+		i++;
+	}
+}
 
 int	main(int argc, char **argv)
 {
@@ -18,7 +39,10 @@ int	main(int argc, char **argv)
 
 	stack = malloc(sizeof(t_tab));
 	if (!stack)
+	{
+		free_end(stack);
 		return (0);
+	}
 	if (argc <= 1)
 		return (0);
 	if (argc == 2)
@@ -33,13 +57,14 @@ int	main(int argc, char **argv)
 	}
 	if (first_sort(argv, stack) == 0)
 		return (0);
+	algo(stack);
 	free_end(stack);
 	return (1);
 }
 
 /*
-	- Trier tous les nombres;
-	- Ajouter la position des nombres trier a la stack A;
+	- Trier tous les nombres; OK
+	- Ajouter la position des nombres trier a la stack A; OK
 	- Parcourir stack A:
 		si decallage de bit = 0 -> push dans stack B
 		sinon continuer de parcourir Stack A;
