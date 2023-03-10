@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:30:01 by thib              #+#    #+#             */
-/*   Updated: 2023/03/10 17:29:52 by thib             ###   ########.fr       */
+/*   Updated: 2023/03/10 17:54:52 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,13 @@ void	length_five(t_tab *stack)
 
 t_tab *algo(t_tab* stack)
 {
+    int	i;
+
+	i = 0;
+	while (i > stack->s_a)
+	{
+		printf("%d", stack->a[i]);
+	}
     if (stack->s_a > 5)
         big_stack(stack);
     if (stack->s_a == 3)
