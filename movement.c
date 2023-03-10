@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 12:15:08 by tserdet           #+#    #+#             */
-/*   Updated: 2023/03/10 16:03:00 by thib             ###   ########.fr       */
+/*   Updated: 2023/03/10 21:48:09 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ t_tab *ra(t_tab *stack)
 	if ((stack->s_a - i) == 2)
 	{
 		swap(&stack->a[i], &stack->a[i + 1]);
+		ft_printf("ra\n");
 		return (stack);
 	}
 	temp = stack->a[i];
@@ -92,6 +93,12 @@ t_tab *rra(t_tab *stack)
 	i = 0;
 	while (stack->a[i] == - 1)
 		i++;
+	if ((stack->s_a - i) == 2)
+	{
+		swap(&stack->a[i], &stack->a[i + 1]);
+		ft_printf("ra\n");
+		return (stack);
+	}
 	while (i < stack->s_a)
 	{
 		swap(&stack->a[i], &stack->a[i + 1]);

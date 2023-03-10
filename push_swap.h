@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 10:07:27 by tserdet           #+#    #+#             */
-/*   Updated: 2023/03/10 17:33:18 by thib             ###   ########.fr       */
+/*   Updated: 2023/03/10 21:18:45 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,5 @@ t_tab *rra(t_tab *stack);
 void	big_stack(t_tab *stack);
 t_tab *algo(t_tab* stack);
 void    lenght_two(t_tab *stack);
-void	lenght_four(t_tab *stack);
-void	length_five(t_tab *stack);
 void	lenght_three(t_tab *stack);
-int min(t_tab *stack);
 #endif
