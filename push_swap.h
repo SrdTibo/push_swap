@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 10:07:27 by tserdet           #+#    #+#             */
-/*   Updated: 2023/03/10 12:30:23 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/03/10 15:52:54 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,8 @@ void swap(int *a, int *b);
 t_tab *pa(t_tab *stack);
 t_tab *pb(t_tab *stack);
 t_tab *ra(t_tab *stack);
-void	algo(t_tab *stack);
+t_tab *sa(t_tab *stack);
+t_tab *rra(t_tab *stack);
+void	big_stack(t_tab *stack);
+t_tab *algo(t_tab* stack);
 #endif

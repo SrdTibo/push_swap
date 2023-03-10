@@ -3,65 +3,92 @@
 /*                                                        :::      ::::::::   */
 /*   algo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/09 14:43:28 by thib              #+#    #+#             */
-/*   Updated: 2023/03/10 12:33:28 by tserdet          ###   ########.fr       */
+/*   Created: 2023/03/10 15:30:01 by thib              #+#    #+#             */
+/*   Updated: 2023/03/10 16:27:14 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int top_a(t_tab *stack)
+void	three_stack(t_tab *stack)
 {
-    int	i;
-
-	i = 0;
-	while (stack->a[i] == -1)
-		i++;
-	return (i);
+	if (stack->a[0] > stack->a[1] && stack->a[0] < stack->a[2])
+		sa(stack);
+	else if (stack->a[0] > stack->a[1] && stack->a[1] > stack->a[2])
+	{
+		sa(stack);
+		rra(stack);
+	}
+	else if (stack->a[0] > stack->a[1] && stack->a[0] > stack->a[2])
+		ra(stack);
+	else if (stack->a[0] < stack->a[1] && stack->a[0] < stack->a[2])
+	{
+		sa(stack);
+		ra(stack);
+	}
+	else
+		rra(stack);
 }
 
-void	empty_b(t_tab *stack)
+void	length_fivebis_two(t_tab *stack, int posi)
 {
-	int	i;
+	if (posi <= 3)
+		ra(stack);
+	else
+		rra(stack);
+}
 
-	i = 0;
-	while (stack->b[i] == -1)
-		i++;
-	while (i < stack->s_a)
+void	length_fivebis(t_tab *stack)
+{
+    int    taille;
+
+	taille = stack->s_a;
+	if (taille == 1)
 	{
 		pa(stack);
-		i++;
+		return ;
 	}
+	three_stack(stack);
+	pa(stack);
 }
 
-void	algo(t_tab *stack)
+void	length_five(t_tab *stack)
 {
-    int i;
-    int j;
-    int max_num;
-    int max_bits;
+	int	doublon;
+	int	posi;
+    int taille;
+    
+    taille = stack->s_a;
 
-    max_bits = 0;
-    i = 0;
-    j = 0;
-    max_num = stack->s_a;
-    while ((max_num >> max_bits) != 0)
-        max_bits++;
-    while (i < max_bits)
-    {
-        while (j < stack->s_a)
-        {
-			stack->num = stack->a[top_a(stack)];
-			if (((stack->num >> i) & 1) == 1)
-				ra(stack);
-			else
-				pb(stack);
-            j++;
-        }
-		empty_b(stack);
-		j = 0;
-		i++;
-    }
+    while (stack->a[posi] == -1)
+        posi++;
+
+	while (taille > 3)
+	{
+		length_fivebis_two(stack, posi);
+		if (stack->a[0] == 0)
+		{
+			pb(stack);
+			taille--;
+			doublon = 1;
+		}
+		if (stack->a[0] == 1 && doublon == 1)
+		{
+			pb(stack);
+			taille--;
+			doublon = 2;
+		}
+	}
+	length_fivebis(stack);
+}
+
+t_tab *algo(t_tab* stack)
+{
+    if (stack->s_a > 5)
+        big_stack(stack);
+    if (stack->s_a == 3)
+        three_stack(stack);
+    return (stack);
 }

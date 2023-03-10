@@ -3,14 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   movement.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 12:15:08 by tserdet           #+#    #+#             */
-/*   Updated: 2023/03/10 12:16:12 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/03/10 16:03:00 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+t_tab *sa(t_tab *stack)
+{
+	int	i;
+
+	i = 0;
+	while (stack->a[i] == - 1)
+		i++;
+	swap(&stack->a[i], &stack->a[i + 1]);
+	ft_printf("sa\n");
+	return (stack);
+}
 
 t_tab *pa(t_tab *stack)
 {
@@ -70,5 +82,21 @@ t_tab *ra(t_tab *stack)
 	}
 	stack->a[stack->s_a - 1] = temp;
 	ft_printf("ra\n");
+	return (stack);
+}
+
+t_tab *rra(t_tab *stack)
+{
+	int	i;
+
+	i = 0;
+	while (stack->a[i] == - 1)
+		i++;
+	while (i < stack->s_a)
+	{
+		swap(&stack->a[i], &stack->a[i + 1]);
+		i++;
+	}
+	ft_printf("rra\n");
 	return (stack);
 }
