@@ -25,7 +25,7 @@ clean :
 	rm -rf $(OBJ)
 
 fclean :	clean
-	rm -f $(NAME) so_long.out
+	rm -f $(NAME)
 
 re :		fclean all
 

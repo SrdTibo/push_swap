@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   first_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 09:21:08 by tserdet           #+#    #+#             */
-/*   Updated: 2023/03/09 21:01:29 by thib             ###   ########.fr       */
+/*   Updated: 2023/03/10 10:24:17 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,41 +55,11 @@ t_tab *to_positive(t_tab *stack)
     j = 0;
     i = 0;
 
-
-
-
-	printf("s_a = %d\n", stack->s_a);
-	printf("s_temp = %d\n", stack->s_temp);
-	printf("a = ");
-	while(i < stack->s_a)
-	{
-		printf("%d, ", stack->a[i]);
-		i++;
-	}
-	printf("\n");
-	i = 0;
-	printf("temp = ");
-	while(i < stack->s_temp)
-	{
-		printf("%d, ", stack->temp[i]);
-		i++;
-	}
-	printf("\n");
-	i = 0;
-
-
-
-
-
-
     while (i < stack->s_a)
     {
-        while(j < stack->s_temp)
-        {
-            if (stack->a[i] == stack->temp[j])
-                stack->a[i] = j;
+        while(stack->a[i] != stack->temp[j])
             j++;
-        }
+		stack->a[i] = j;
 		j = 0;
         i++;
 	}

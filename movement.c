@@ -6,7 +6,7 @@
 /*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 12:15:08 by tserdet           #+#    #+#             */
-/*   Updated: 2023/03/09 13:44:06 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/03/10 12:16:12 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,17 @@ t_tab *ra(t_tab *stack)
 
 	i = 0;
 	temp = 0;
-	while (stack->a[i] == -1)
+	while (stack->a[i] == - 1)
 		i++;
+	if ((stack->s_a - i) == 2)
+	{
+		swap(&stack->a[i], &stack->a[i + 1]);
+		return (stack);
+	}
 	temp = stack->a[i];
 	while (i < stack->s_a)
 	{
-		swap(&stack->a[i], &stack->a[i - 1]);
+		swap(&stack->a[i], &stack->a[i + 1]);
 		i++;
 	}
 	stack->a[stack->s_a - 1] = temp;

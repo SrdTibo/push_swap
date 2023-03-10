@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 14:43:28 by thib              #+#    #+#             */
-/*   Updated: 2023/03/09 19:47:35 by thib             ###   ########.fr       */
+/*   Updated: 2023/03/10 12:33:28 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,21 +46,22 @@ void	algo(t_tab *stack)
     max_bits = 0;
     i = 0;
     j = 0;
-    stack->num = top_a(stack);
-    max_num = (stack->s_a) - 1;
+    max_num = stack->s_a;
     while ((max_num >> max_bits) != 0)
         max_bits++;
     while (i < max_bits)
     {
         while (j < stack->s_a)
         {
-			if ((stack->num >> i) & (1 == 1))
+			stack->num = stack->a[top_a(stack)];
+			if (((stack->num >> i) & 1) == 1)
 				ra(stack);
 			else
 				pb(stack);
             j++;
         }
+		empty_b(stack);
+		j = 0;
 		i++;
     }
-	empty_b(stack);
 }
