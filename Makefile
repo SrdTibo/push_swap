@@ -13,7 +13,7 @@ ft_printf/ft_extra_function.c ft_printf/ft_print_c.c ft_printf/ft_print_d.c ft_p
 ft_printf/ft_print_i.c ft_printf/ft_print_modulo.c ft_printf/ft_print_p.c ft_printf/ft_print_s.c\
 ft_printf/ft_print_u.c ft_printf/ft_print_x.c ft_printf/ft_print_xbis.c\
 main.c put_list.c argv_big_check.c argv_little_check.c put_tab.c first_sort.c free_end.c movement.c algo.c\
-big_stack.c\
+big_stack.c algo2.c\
 
 OBJ	= $(SRC:.c=.o)
 
