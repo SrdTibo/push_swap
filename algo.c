@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:30:01 by thib              #+#    #+#             */
-/*   Updated: 2023/03/11 11:20:40 by thib             ###   ########.fr       */
+/*   Updated: 2023/03/11 17:38:50 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,40 @@
 
 void	lenght_three(t_tab *stack)
 {
-	if (stack->a[0] > stack->a[1] && stack->a[0] < stack->a[2])
+	int	i;
+
+	i = 0;
+	while (stack->a[i] == -1)
+		i++;
+	if (stack->a[i] > stack->a[i + 1] && stack->a[i] < stack->a[i + 2])
 		sa(stack);
-	else if (stack->a[0] > stack->a[1] && stack->a[1] > stack->a[2])
+	else if (stack->a[i] > stack->a[i + 1] && stack->a[i + 1] > stack->a[i + 2])
 	{
 		sa(stack);
 		rra(stack);
 	}
-	else if (stack->a[0] > stack->a[1] && stack->a[0] > stack->a[2])
+	else if (stack->a[i] > stack->a[i + 1] && stack->a[i] > stack->a[i + 2])
 		ra(stack);
-	else if (stack->a[0] < stack->a[1] && stack->a[0] < stack->a[2])
+	else if (stack->a[i] < stack->a[i + 1] && stack->a[i] < stack->a[i + 2])
 	{
 		sa(stack);
 		ra(stack);
 	}
 	else
 		rra(stack);
+}
+
+void	lenght_four(t_tab *stack)
+{
+	int	temp;
+	int	i;
+
+	i = 0;
+	temp = stack->a[stack->s_a];
+	stack->a[stack->s_a] = -1;
+	rra(stack);
+	lenght_three(stack);
+	while (temp > stack->a[i] )
 }
 
 void	lenght_two(t_tab *stack)
