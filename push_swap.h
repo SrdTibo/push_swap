@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 10:07:27 by tserdet           #+#    #+#             */
-/*   Updated: 2023/03/13 15:13:41 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/03/13 19:02:31 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ t_tab *put_tab_big(int argc, char **argv, t_tab *stack);
 t_tab *put_tab_little(int argc, char **argv, t_tab *stack);
 int	check_argv(int argc, char **argv);
 int insertion(t_control *list, int nvNombre);
-t_tab *sort_tab(t_tab *stack, int n);
+t_tab *sort_tab(t_tab *stack);
 t_tab *first_sort(char **argv, t_tab *stack);
 int	free_end(t_tab *stack);
 t_tab	*argv_big_check(int argc, char **argv, t_tab *stack);

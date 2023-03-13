@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   first_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 09:21:08 by tserdet           #+#    #+#             */
-/*   Updated: 2023/03/13 17:15:35 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/03/13 19:08:25 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,33 +21,31 @@ void swap(int *a, int *b)
     *b = temp;
 }
 
-t_tab *sort_tab(t_tab *stack, int n)
+t_tab *sort_tab(t_tab *stack)
 {
-	int i;
-    int j;
-	int	a;
+	int	i;
+	int	j;
+	int	temp;
 
-    j = 0;
-    i = 0;
-	a = stack->argm;
-	while (j < n)
+	temp = 0;
+	i = 0;
+	j = 1;
+	while (i < stack->s_a)
 	{
-		while (i < n)
+		while (j < stack->s_a)
 		{
-			if (stack->temp[i + 1] < stack->temp[i])
-				swap(&stack->temp[i + 1], &stack->temp[i]);
-			i++;
+			if (stack->temp[i] > stack->temp[j])
+			{
+				temp = stack->temp[j];
+				stack->temp[j] = stack->temp[i];
+				stack->temp[i] = temp;
+			}
+			j++;
 		}
-		i = 0;
-		j++;
+		i++;
+		j = i + 1;
 	}
-	print_stacks(stack);
-	while (stack->temp[a - 2] > stack->temp[a - 1])
-	{
-		swap(&stack->temp[a - 2], &stack->temp[a - 1]);
-		a--;
-	}
-    return (stack);
+	return (stack);
 }
 
 t_tab *to_positive(t_tab *stack)
@@ -86,7 +84,7 @@ t_tab *first_sort(char **argv, t_tab *stack)
 {
 	(void)argv;
 	init_b(stack);
-    sort_tab(stack, stack->argm - 2);
+    sort_tab(stack);
     to_positive(stack);
     return (stack);
 }
