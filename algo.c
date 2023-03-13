@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:30:01 by thib              #+#    #+#             */
-/*   Updated: 2023/03/11 17:38:50 by thib             ###   ########.fr       */
+/*   Updated: 2023/03/13 09:57:33 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,46 @@ void	lenght_four(t_tab *stack)
 	int	i;
 
 	i = 0;
-	temp = stack->a[stack->s_a];
-	stack->a[stack->s_a] = -1;
-	rra(stack);
+	while (i < stack->s_a)
+	{
+		if (stack->a[i] < stack->a[i + 1])
+			temp = stack->a[i];
+		i++;
+	}
+	i = 0;
+	while (i < stack->s_a)
+	{
+		if (stack->a[0] == temp)
+			pb(stack);
+		ra(stack);
+		i++;
+	}
 	lenght_three(stack);
-	while (temp > stack->a[i] )
+	pa(stack);
+}
+
+void	lenght_five(t_tab *stack)
+{
+	int	temp;
+	int	i;
+
+	i = 0;
+	while (i < stack->s_a)
+	{
+		if (stack->a[i] < stack->a[i + 1])
+			temp = stack->a[i];
+		i++;
+	}
+	i = 0;
+	while (i < stack->s_a)
+	{
+		if (stack->a[0] == temp)
+			pb(stack);
+		ra(stack);
+		i++;
+	}
+	lenght_four(stack);
+	pa(stack);
 }
 
 void	lenght_two(t_tab *stack)
@@ -61,6 +96,10 @@ t_tab *algo(t_tab* stack)
     printf("s_a = %d\n", stack->s_a);
 	if (stack->s_a > 5)
 		big_stack(stack);
+	if (stack->s_a == 5)
+		lenght_five(stack);
+	if (stack->s_a == 4)
+		lenght_four(stack);
     if (stack->s_a == 3)
         lenght_three(stack);
     if (stack->s_a == 2)
