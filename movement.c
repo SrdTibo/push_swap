@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   movement.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 12:15:08 by tserdet           #+#    #+#             */
-/*   Updated: 2023/03/10 21:48:09 by thib             ###   ########.fr       */
+/*   Updated: 2023/03/13 16:43:56 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ t_tab *ra(t_tab *stack)
 t_tab *rra(t_tab *stack)
 {
 	int	i;
+	int	tmp;
 
 	i = 0;
 	while (stack->a[i] == - 1)
@@ -99,10 +100,11 @@ t_tab *rra(t_tab *stack)
 		ft_printf("ra\n");
 		return (stack);
 	}
-	while (i < stack->s_a)
+	tmp = stack->s_a - i;
+	while (tmp > 0)
 	{
-		swap(&stack->a[i], &stack->a[i + 1]);
-		i++;
+		swap(&stack->a[tmp], &stack->a[tmp - 1]);
+		tmp--;
 	}
 	ft_printf("rra\n");
 	return (stack);

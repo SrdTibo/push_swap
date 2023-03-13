@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 10:07:11 by tserdet           #+#    #+#             */
-/*   Updated: 2023/03/13 10:12:43 by thib             ###   ########.fr       */
+/*   Updated: 2023/03/13 17:17:01 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ int	main(int argc, char **argv)
 		free_end(stack);
 		return (0);
 	}
-		
 	if (argc == 2)
 	{
 		if (argv_little_check(argv, stack) == 0)
@@ -62,9 +61,9 @@ int	main(int argc, char **argv)
 	}
 	if (first_sort(argv, stack) == 0)
 		return (0);
-	print_stacks(stack);
+	if (already_sorted(stack) == 1)
+	 	return (0);
 	algo(stack);
-	print_stacks(stack);
 	free_end(stack);
 	return (1);
 }

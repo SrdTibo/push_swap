@@ -6,7 +6,7 @@
 /*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 09:21:08 by tserdet           #+#    #+#             */
-/*   Updated: 2023/03/10 10:24:17 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/03/13 17:15:35 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,11 @@ t_tab *sort_tab(t_tab *stack, int n)
 {
 	int i;
     int j;
+	int	a;
 
     j = 0;
     i = 0;
+	a = stack->argm;
 	while (j < n)
 	{
 		while (i < n)
@@ -39,10 +41,11 @@ t_tab *sort_tab(t_tab *stack, int n)
 		i = 0;
 		j++;
 	}
-	while (stack->temp[stack->argm - 2] > stack->temp[stack->argm - 1])
+	print_stacks(stack);
+	while (stack->temp[a - 2] > stack->temp[a - 1])
 	{
-		swap(&stack->temp[stack->argm - 2], &stack->temp[stack->argm - 1]);
-		stack->argm--;
+		swap(&stack->temp[a - 2], &stack->temp[a - 1]);
+		a--;
 	}
     return (stack);
 }
