@@ -6,7 +6,7 @@
 /*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:30:01 by thib              #+#    #+#             */
-/*   Updated: 2023/03/13 12:23:54 by thib             ###   ########.fr       */
+/*   Updated: 2023/03/13 14:08:31 by thib             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,28 @@ void	lenght_three(t_tab *stack)
 	while (stack->a[i] == -1)
 		i++;
 	if (stack->a[i] > stack->a[i + 1] && stack->a[i] < stack->a[i + 2])
+	{
 		sa(stack);
+		print_stacks(stack);
+	}
 	else if (stack->a[i] > stack->a[i + 1] && stack->a[i + 1] > stack->a[i + 2])
 	{
 		sa(stack);
+		print_stacks(stack);
 		rra(stack);
+		print_stacks(stack);
 	}
 	else if (stack->a[i] > stack->a[i + 1] && stack->a[i] > stack->a[i + 2])
+	{
 		ra(stack);
+		print_stacks(stack);
+	}
 	else if (stack->a[i] < stack->a[i + 1] && stack->a[i] < stack->a[i + 2])
 	{
 		sa(stack);
+		print_stacks(stack);
 		ra(stack);
+		print_stacks(stack);
 	}
 	else
 		rra(stack);
@@ -52,6 +62,7 @@ void	lenght_four(t_tab *stack)
 		ra(stack);
 		i++;
 	}
+	print_stacks(stack);
 	lenght_three(stack);
 	pa(stack);
 }
