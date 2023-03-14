@@ -6,7 +6,7 @@
 /*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:30:01 by thib              #+#    #+#             */
-/*   Updated: 2023/03/13 17:16:30 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/03/14 12:37:00 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	lenght_two(t_tab *stack)
 		ra(stack);
 }
 
-t_tab *algo(t_tab* stack)
+t_tab	*algo(t_tab *stack)
 {
 	if (stack->s_a > 5)
 		big_stack(stack);
@@ -79,9 +79,9 @@ t_tab *algo(t_tab* stack)
 		lenght_five(stack);
 	if (stack->s_a == 4)
 		lenght_four(stack);
-    if (stack->s_a == 3)
-        lenght_three(stack);
-    if (stack->s_a == 2)
-        lenght_two(stack);
-    return (stack);
+	if (stack->s_a == 3)
+		lenght_three(stack);
+	if (stack->s_a == 2)
+		lenght_two(stack);
+	return (stack);
 }

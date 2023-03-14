@@ -6,25 +6,25 @@
 /*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 12:15:08 by tserdet           #+#    #+#             */
-/*   Updated: 2023/03/13 16:43:56 by tserdet          ###   ########.fr       */
+/*   Updated: 2023/03/14 13:17:33 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_tab *sa(t_tab *stack)
+t_tab	*sa(t_tab *stack)
 {
 	int	i;
 
 	i = 0;
-	while (stack->a[i] == - 1)
+	while (stack->a[i] == -1)
 		i++;
 	swap(&stack->a[i], &stack->a[i + 1]);
 	ft_printf("sa\n");
 	return (stack);
 }
 
-t_tab *pa(t_tab *stack)
+t_tab	*pa(t_tab *stack)
 {
 	int	i;
 	int	j;
@@ -41,7 +41,7 @@ t_tab *pa(t_tab *stack)
 	return (stack);
 }
 
-t_tab *pb(t_tab *stack)
+t_tab	*pb(t_tab *stack)
 {
 	int	i;
 	int	j;
@@ -52,22 +52,20 @@ t_tab *pb(t_tab *stack)
 		i++;
 	while (stack->b[j] == -1)
 		j++;
-
-
 	stack->b[j - 1] = stack->a[i];
 	stack->a[i] = -1;
 	ft_printf("pb\n");
 	return (stack);
 }
 
-t_tab *ra(t_tab *stack)
+t_tab	*ra(t_tab *stack)
 {
 	int	i;
 	int	temp;
 
 	i = 0;
 	temp = 0;
-	while (stack->a[i] == - 1)
+	while (stack->a[i] == -1)
 		i++;
 	if ((stack->s_a - i) == 2)
 	{
@@ -86,13 +84,13 @@ t_tab *ra(t_tab *stack)
 	return (stack);
 }
 
-t_tab *rra(t_tab *stack)
+t_tab	*rra(t_tab *stack)
 {
 	int	i;
 	int	tmp;
 
 	i = 0;
-	while (stack->a[i] == - 1)
+	while (stack->a[i] == -1)
 		i++;
 	if ((stack->s_a - i) == 2)
 	{

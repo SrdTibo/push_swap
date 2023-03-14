@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   argv_big_check.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 14:35:50 by tserdet           #+#    #+#             */
-/*   Updated: 2023/03/08 10:46:01 by thib             ###   ########.fr       */
+/*   Updated: 2023/03/14 12:37:56 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	check_argv(int argc, char **argv)
 		{
 			if ((argv[p][i] < 48 || argv[p][i] > 57) && argv[p][i] != 45)
 			{
-				ft_printf("Error\nARGV must be numbers");
+				ft_printf("Error\n");
 				return (0);
 			}
 			i++;
@@ -36,27 +36,27 @@ int	check_argv(int argc, char **argv)
 	return (1);
 }
 
-int check_double(int argc, char **argv)
+int	check_double(int argc, char **argv)
 {
 	int	i;
 	int	p;
 
 	i = 1;
 	p = 2;
-		while (i < argc)
+	while (i < argc)
+	{
+		while (p < argc)
 		{
-			while (p < argc)
+			if (ft_atoi(argv[p]) == ft_atoi(argv[i]))
 			{
-				if (ft_atoi(argv[p]) == ft_atoi(argv[i]))
-				{
-					ft_printf("Error\nThere should be no duplicates");
-					return (0);
-				}
-				p++;
+				ft_printf("Error\n");
+				return (0);
 			}
-			i++;
-			p = i + 1;
+			p++;
 		}
+		i++;
+		p = i + 1;
+	}
 	return (1);
 }
 

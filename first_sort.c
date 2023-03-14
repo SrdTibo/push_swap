@@ -3,25 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   first_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 09:21:08 by tserdet           #+#    #+#             */
-/*   Updated: 2023/03/13 19:08:25 by thib             ###   ########.fr       */
+/*   Updated: 2023/03/14 13:11:15 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void swap(int *a, int *b)
+void	swap(int *a, int *b)
 {
-    int temp;
+	int	temp;
 
 	temp = *a;
-    *a = *b;
-    *b = temp;
+	*a = *b;
+	*b = temp;
 }
 
-t_tab *sort_tab(t_tab *stack)
+t_tab	*sort_tab(t_tab *stack)
 {
 	int	i;
 	int	j;
@@ -48,26 +48,25 @@ t_tab *sort_tab(t_tab *stack)
 	return (stack);
 }
 
-t_tab *to_positive(t_tab *stack)
+t_tab	*to_positive(t_tab *stack)
 {
-    int i;
-    int j;
+	int	i;
+	int	j;
 
-    j = 0;
-    i = 0;
-
-    while (i < stack->s_a)
-    {
-        while(stack->a[i] != stack->temp[j])
-            j++;
+	j = 0;
+	i = 0;
+	while (i < stack->s_a)
+	{
+		while (stack->a[i] != stack->temp[j])
+			j++;
 		stack->a[i] = j;
 		j = 0;
-        i++;
+		i++;
 	}
-    return (stack);
+	return (stack);
 }
 
-t_tab *init_b(t_tab *stack)
+t_tab	*init_b(t_tab *stack)
 {
 	int	i;
 
@@ -80,11 +79,11 @@ t_tab *init_b(t_tab *stack)
 	return (stack);
 }
 
-t_tab *first_sort(char **argv, t_tab *stack)
+t_tab	*first_sort(char **argv, t_tab *stack)
 {
 	(void)argv;
 	init_b(stack);
-    sort_tab(stack);
-    to_positive(stack);
-    return (stack);
+	sort_tab(stack);
+	to_positive(stack);
+	return (stack);
 }

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 10:07:11 by tserdet           #+#    #+#             */
-/*   Updated: 2023/03/13 18:59:41 by thib             ###   ########.fr       */
+/*   Updated: 2023/03/14 13:28:46 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void print_stacks(t_tab *stack)
+void	print_stacks(t_tab *stack)
 {
 	int	i;
 
@@ -34,16 +34,8 @@ void print_stacks(t_tab *stack)
 	ft_printf("\n");
 }
 
-int	main(int argc, char **argv)
+int	verif(int argc, char **argv, t_tab *stack)
 {
-	t_tab *stack;
-
-	stack = malloc(sizeof(t_tab));
-	if (!stack)
-	{
-		free_end(stack);
-		return (0);
-	}
 	if (argc <= 1)
 	{
 		free_end(stack);
@@ -59,22 +51,26 @@ int	main(int argc, char **argv)
 		if (argv_big_check(argc, argv, stack) == 0)
 			return (0);
 	}
-	
-	if (first_sort(argv, stack) == 0)
-		return (0);
-	if (already_sorted(stack) == 1)
-	 	return (0);
-	algo(stack);
-	print_stacks(stack);
-	free_end(stack);
 	return (1);
 }
 
-/*
-	- Trier tous les nombres; OK
-	- Ajouter la position des nombres trier a la stack A; OK
-	- Parcourir stack A:
-		si decallage de bit = 0 -> push dans stack B
-		sinon continuer de parcourir Stack A;
-	- Push tout B au dessu de A;
-*/
+int	main(int argc, char **argv)
+{
+	t_tab	*stack;
+
+	stack = malloc(sizeof(t_tab));
+	if (!stack)
+	{
+		free_end(stack);
+		return (0);
+	}
+	if (verif(argc, argv, stack) == 0)
+		return (0);
+	if (first_sort(argv, stack) == 0)
+		return (0);
+	if (already_sorted(stack) == 1)
+		return (0);
+	algo(stack);
+	free_end(stack);
+	return (1);
+}

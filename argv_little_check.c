@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   argv_little_check.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 14:46:19 by tserdet           #+#    #+#             */
-/*   Updated: 2023/03/08 10:49:41 by thib             ###   ########.fr       */
+/*   Updated: 2023/03/14 12:38:35 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	check_argv_litlle(int argc, char **argv)
 		{
 			if ((argv[p][i] < 48 || argv[p][i] > 57) && argv[p][i] != 45)
 			{
-				ft_printf("Error\nARGV must be numbers");
+				ft_printf("Error\n");
 				return (0);
 			}
 			i++;
@@ -53,7 +53,7 @@ int	check_argv_litlle(int argc, char **argv)
 	return (1);
 }
 
-int check_double_little(int argc, char **argv)
+int	check_double_little(int argc, char **argv)
 {
 	int	i;
 	int	p;
@@ -66,7 +66,7 @@ int check_double_little(int argc, char **argv)
 		{
 			if (ft_atoi(argv[p]) == ft_atoi(argv[i]))
 			{
-				ft_printf("Error\nThere should be no duplicates");
+				ft_printf("Error\n");
 				return (0);
 			}
 			p++;
@@ -77,12 +77,11 @@ int check_double_little(int argc, char **argv)
 	return (1);
 }
 
-t_tab *argv_split(char **argv, t_tab *stack)
+t_tab	*argv_split(char **argv, t_tab *stack)
 {
-	char **tab;
+	char	**tab;
 
 	tab = ft_split(argv[1], ' ');
-
 	if (!tab)
 		return (0);
 	if (check_argv_litlle(nmbr_arg_tab(tab), tab) == 0)

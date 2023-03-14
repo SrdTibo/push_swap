@@ -1,4 +1,4 @@
-NAME = push_swap.out
+NAME = push_swap
 CFLAGS = -Wall -Wextra -Werror
 SRC	= 	libft/ft_calloc.c libft/ft_isdigit.c libft/ft_memcpy.c libft/ft_strtrim.c libft/ft_strdup.c libft/ft_strlen.c\
 libft/ft_isalnum.c libft/ft_isprint.c \
@@ -12,7 +12,7 @@ libft/ft_putendl_fd.c libft/ft_putnbr_fd.c libft/ft_strcat.c\
 ft_printf/ft_extra_function.c ft_printf/ft_print_c.c ft_printf/ft_print_d.c ft_printf/ft_printf.c\
 ft_printf/ft_print_i.c ft_printf/ft_print_modulo.c ft_printf/ft_print_p.c ft_printf/ft_print_s.c\
 ft_printf/ft_print_u.c ft_printf/ft_print_x.c ft_printf/ft_print_xbis.c\
-main.c put_list.c argv_big_check.c argv_little_check.c put_tab.c first_sort.c free_end.c movement.c algo.c utils.c\
+main.c argv_big_check.c argv_little_check.c put_tab.c first_sort.c free_end.c movement.c algo.c utils.c\
 big_stack.c \
 
 OBJ	= $(SRC:.c=.o)

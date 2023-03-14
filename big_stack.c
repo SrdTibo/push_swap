@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algo.c                                             :+:      :+:    :+:   */
+/*   big_stack.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thib <thib@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: tserdet <tserdet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 14:43:28 by thib              #+#    #+#             */
-/*   Updated: 2023/03/10 15:28:36 by thib             ###   ########.fr       */
+/*   Updated: 2023/03/14 12:43:28 by tserdet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int top_a(t_tab *stack)
+int	top_a(t_tab *stack)
 {
-    int	i;
+	int	i;
 
 	i = 0;
 	while (stack->a[i] == -1)
@@ -38,30 +38,28 @@ void	empty_b(t_tab *stack)
 
 void	big_stack(t_tab *stack)
 {
-    int i;
-    int j;
-    int max_num;
-    int max_bits;
+	int	i;
+	int	j;
+	int	max_num;
 
-    max_bits = 0;
-    i = 0;
-    j = 0;
-    max_num = stack->s_a;
-    while ((max_num >> max_bits) != 0)
-        max_bits++;
-    while (i < max_bits)
-    {
-        while (j < stack->s_a)
-        {
+	i = 0;
+	j = 0;
+	max_num = stack->s_a;
+	while ((max_num >> stack->max_bits) != 0)
+		stack->max_bits++;
+	while (i < stack->max_bits)
+	{
+		while (j < stack->s_a)
+		{
 			stack->num = stack->a[top_a(stack)];
 			if (((stack->num >> i) & 1) == 1)
 				ra(stack);
 			else
 				pb(stack);
-            j++;
-        }
+			j++;
+		}
 		empty_b(stack);
 		j = 0;
 		i++;
-    }
+	}
 }
